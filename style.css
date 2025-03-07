@@ -1,0 +1,144 @@
+*{
+    padding: 0;
+    margin: 0;
+    letter-spacing: 1px;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+body{
+    box-sizing: border-box;
+    width: 100vw;
+    overflow-x: hidden;
+    padding: 30px;
+    background: linear-gradient(rgb(35, 146, 35), rgb(250, 215, 215), rgb(242, 242, 78));
+    background-repeat: no-repeat;
+    height: 100vh;
+}
+
+a{
+    text-decoration: none;
+}
+
+button:nth-child(1) a, button:nth-child(2):hover a{
+    color: green;
+}
+
+button:nth-child(2) a{
+    color: black;
+}
+
+button:nth-child(1):hover a{
+    color: white;
+}
+
+button{
+    cursor: pointer;
+}
+
+section > div.flex{
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 52px;
+}
+
+.flex{
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 10px;
+    flex-wrap: wrap;
+    align-content: center;
+}
+
+div > button{
+    margin-right: 20px;
+    padding: 5px 7px;
+    border-radius: 7px;
+    border: 1px greenyellow;
+    font-size: 15px;
+    transition: all 0.5s ease-in-out;
+}
+
+div > button:nth-child(1){
+    background-color: rgb(150, 244, 10);
+}
+
+div > button:nth-child(2):hover{
+    background-color: rgba(240, 240, 89, 0.82);
+}
+
+div > button:nth-child(1):hover{
+    background-color: transparent;
+    border: 1px solid green
+}
+
+h2, p{
+    line-height: 40px;
+}
+
+img{
+    border-radius: 20%;
+}
+
+img:hover{
+    opacity: 0.8;
+}
+
+.dropdown{
+    position: relative;
+    display: inline-block;
+}
+
+.dropMenu{
+    display: none;
+    position: absolute;
+    background-color: #f1f1f1;
+    min-width: 16px;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    z-index: 1;
+    border-radius: 2px;
+}
+
+.dropMenu a{
+    color: black;
+    padding: 8px 16px;
+    display: block;
+}
+
+.dropMenu a:hover{
+    background-color: #ddd;
+}
+
+.show{
+    display: block;
+}
+
+.dropbtn::after{
+    content: "\25b2";
+}
+
+.dropbtn:active::after{
+    content: "\25bc";
+}
+
+
+
+@media (max-width: 600px) {
+    h2{
+        font-size: large;
+    }
+    p{
+        font-size: 15px;
+    }
+    h2, p{
+        line-height: 25px;
+    }
+    div > button{
+        margin-right: 7px;
+    }
+
+    img{
+        padding-top: 5px;
+        width: 200px;
+    }
+}
+
