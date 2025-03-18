@@ -2,7 +2,7 @@
 include  "header.php";
 
 if(!isset($_SESSION["email"])){
-    header("location: /login.php");
+    header("location: /login");
     exit;
 }
 ?>
@@ -48,7 +48,7 @@ if(!isset($_SESSION["email"])){
                 </div>
                 <div>
                     <div>Address:</div>
-                    <div> <?= $_SESSION["address"]?></div>
+                    <div> <?= $_SESSION["address"] ?? ""?></div>
                 </div>
                 <div>
                     <div>Created at:</div>

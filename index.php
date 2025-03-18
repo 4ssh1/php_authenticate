@@ -8,7 +8,7 @@
                     <p>Find a large collection of newest ideas from popular brands</p>
                 </div>
                 <div>
-                    <div><img src="/images/b6.jpg" alt="" width= "300px"></div>
+                    <div><img src="/authentication/images/b6.jpg" alt="" width= "300px"></div>
                 </div>
             </div>
         </section>

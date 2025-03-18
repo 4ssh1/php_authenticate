@@ -83,7 +83,7 @@
     include "header.php";
     
     if (isset($_SESSION["email"])){
-        header("location: /index.php");
+        header("location: /authentication");
         exit;
     }
 
@@ -239,7 +239,7 @@
                  $_SESSION["address"] = $address;
                  $_SESSION["created_at"] = $created_at;
 
-                 header("location: /index.php");
+                 header("location: /index");
                  exit;
              }else{
                  $errors = $validationS->getErrors(); 
@@ -265,7 +265,7 @@
                 </div>
                 <div class='btn_div'>
                     <button type="submit">Submit</button>
-                    <button><a href="/index.php">Cancel</a></button>
+                    <button><a href="/authentication">Cancel</a></button>
                 </div>
             </div>
         </div>

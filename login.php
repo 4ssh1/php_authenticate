@@ -49,14 +49,14 @@
             padding-top: 30px;
             gap: 20px;
         }
-        .btn_div buttton{
+        .btn_div button{
             border: 1px solid rgba(33, 32, 32, 0.4);
             padding: 5px 10px;
             cursor: pointer;
             background-color: rgb(170, 236, 71);
             border-radius: 5px;
         }
-        .btn_div buttton:hover{
+        .btn_div button:hover{
             background-color: transparent;
         }
  
@@ -81,9 +81,10 @@
     </style>
     <?php
         if (isset($_SESSION["email"])){
-            header("location: /index.php");
+            header("location: /authentication");
             exit;
         }
+       
 
         $email = ""; 
 
@@ -130,6 +131,10 @@
                 return $this->errors;
             }
 
+            public function addError($key, $message) {
+                $this->errors[$key] = $message;
+            }
+
             function isValid(){
                 return empty($this->errors); //return true if empty
             }
@@ -167,10 +172,10 @@
                         // var_dump($_SESSION); 
                         // exit();
 
-                        header("location: /index.php");
+                        header("location: /authentication");
                         exit();
                     }else{
-                        echo "Invalid";
+                        $validate->addError('login', "Invalid email and password");
                     }
                 }
 
@@ -195,11 +200,12 @@
                                id = "<?= $key?>" >
                         <span><?= $error[$key] ?? ""?></span>
                     </div>
+                    <p style= "font-size: 12px; color:red;"><?= $validate->getErrors()['login'] ?? ""?></p>
                     <?php endforeach;?>
                 </div>
                 <div class='btn_div'>
                     <button type="submit">Login</button>
-                    <button><a href="/index.php">Cancel</a></button>
+                    <button><a href="/authentication">Cancel</a></button>
                 </div>
             </div>
         </div>

@@ -4,8 +4,6 @@
 
     if(isset($_SESSION["email"])){
         $authenticated = true;
-    }else{
-        echo "no active session";
     }
 ?>
 
@@ -37,7 +35,7 @@
             <nav>
                 <div class="flex">
                     <div>
-                        <h2>AFK <span style="font-size: 15px; padding-left:40px;"><a href="/index.php">HOME</a></span></h2>
+                        <h2>AFK <span style="font-size: 15px; padding-left:40px;"><a href="/authentication">HOME</a></span></h2>
                     </div>
                     <?php
                         if($authenticated){
@@ -45,16 +43,16 @@
                     <div class= "dropdown">
                         <button onclick="toggleMenu()" class="dropbtn">Admin </button>
                         <div id="dropMenu" class="dropMenu">
-                            <a href="profile.php">Profile</a>
-                            <a href="logout.php">Logout</a>
+                            <a href="profile">Profile</a>
+                            <a href="logout">Logout</a>
                         </div>
                     </div>
                     <?php
                     }else{
                     ?>
                     <div class="flex">
-                        <Button class="register"><a href="register.php">Register</a></Button>
-                        <Button class="login"><a href="login.php">Login</a></Button>
+                        <Button class="register"><a href="register">Register</a></Button>
+                        <Button class="login"><a href="login">Login</a></Button>
                     </div>
                     <?php
                     }
